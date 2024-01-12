@@ -10,6 +10,8 @@ import SignUp from './Adding Interactivity/Responding to Events/Preventing Defau
 // import Gallery from './Adding Interactivity/State A Components Memory/Adding a State Variable'
 // import Gallery from './Adding Interactivity/State A Components Memory/Giving a Component Multiple State Variables'
 import AppState from './Adding Interactivity/State A Components Memory/App'
+// import Form from './Adding Interactivity/State as a Snapshot/Setting State Triggers Render'
+import Form from './Adding Interactivity/State as a Snapshot/State Over a Time'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <SignUp />
     <AppState />
     {/* <Gallery /> */}
+    <Form />
     {/* <App /> */}
   </React.StrictMode>,
 )
