@@ -13,12 +13,12 @@ export default function AppState(){
       showMore = {showMore}      
       setShowMore = {setShowMore}
     />
-    <Gallery 
+    {/* <Gallery 
       index = {index}
       setIndex = {setIndex}
       showMore = {showMore}      
       setShowMore = {setShowMore}
-    />
+    /> */}
     </>
   )
 }
