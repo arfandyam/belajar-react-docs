@@ -1,0 +1,12 @@
+Start with the state that absolutely must be there. For example, you’ll need to store the answer for the input, and the error (if it exists) to store the last error:
+
+    const [answer, setAnswer] = useState('');
+    const [error, setError] = useState(null);
+
+Then, you’ll need a state variable representing which one of the visual states that you want to display. start by adding enough state that you’re definitely sure that all the possible visual states are covered:
+
+    const [isEmpty, setIsEmpty] = useState(true);
+    const [isTyping, setIsTyping] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
