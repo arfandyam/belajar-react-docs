@@ -1,0 +1,14 @@
+Spending a little time on refactoring your state structure will make your components easier to understand, reduce duplication, and avoid unintended meanings. **Your goal is to prevent the cases where the state in memory doesn’t represent any valid UI that you’d want a user to see**.
+
+Here are some questions you can ask about your state variables:
+
+1. **Does this state cause a paradox?** For example, isTyping and isSubmitting can’t both be true. A paradox usually means that the state is not constrained enough. There are four possible combinations of two booleans, but only three correspond to valid states. To remove the “impossible” state, you can combine these into a status that must be one of three values: 'typing', 'submitting', or 'success'.
+2. **Is the same information available in another state variable already?** Another paradox: isEmpty and isTyping can’t be true at the same time. By making them separate state variables, you risk them going out of sync and causing bugs. Fortunately, you can remove isEmpty and instead check answer.length === 0.
+3. **Can you get the same information from the inverse of another state variable?** isError is not needed because you can check error !== null instead.
+
+After this clean-up, you’re left with 3 (down from 7!) essential state variables:
+
+    
+    const [answer, setAnswer] = useState('');
+    const [error, setError] = useState(null);
+    const [status, setStatus] = useState('typing'); // 'typing', 'submitting', or 'success'
