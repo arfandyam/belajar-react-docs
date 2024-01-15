@@ -1,0 +1,18 @@
+When you design UI interactions, you probably think about how the UI changes in response to user 
+actions. Consider a form that lets the user submit an answer:
+
+1. When you type something into the form, the “Submit” button becomes enabled.
+2. When you press “Submit”, both the form and the button become disabled, and a spinner appears.
+3. If the network request succeeds, the form gets hidden, and the “Thank you” message appears.
+
+If the network request fails, an error message appears, and the form becomes enabled again.
+In imperative programming, the above corresponds directly to how you implement interaction. You have
+to write the exact instructions to manipulate the UI depending on what just happened. 
+
+Manipulating the UI imperatively works well enough for isolated examples, but it gets exponentially
+more difficult to manage in more complex systems. Imagine updating a page full of different forms
+like this one. Adding a new UI element or a new interaction would require carefully checking all
+existing code to make sure you haven’t introduced a bug (for example, forgetting to show or hide
+something).
+
+
