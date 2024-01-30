@@ -1,0 +1,21 @@
+Komponen yang menyediakan context dapat digunakan berkali-kali meskipun dengan komponen yang
+menggunakan context itu. Meskipun berada pada nested komponen yang cukup dalam, context tersebut
+dapat terbaca sesuai dengan level treenya.
+
+Karena hal tersebut, konteks sangat sering digunakan meskipun bukan pada waktunya, beberapa hal yang
+dapat dipertimbangkan sebelum menggunakan context
+1. Mulai dari passing props
+2. Ekstrak komponen dan pass sebagai children, sebagai contoh:
+  Jika kita pass data 'posts' pada komponen visual yang tidak menggunakannya seperti 
+  <Layout posts={posts} /> sebaiknya buat layout mengambil children sebagai prop seperti
+  <Layout><Posts posts={posts} /></Layout>
+
+Jika kedua cara ini tidak begitu bekerja dengan baik, GUNAKAN CONTEXT!
+
+Beberapa use case context:
+1.  Membuat theme, pengadaan fitur yang dapat mengubah tampilan app
+2.  Status akun yang login saat ini, Banyak komponen yang mungkin perlu mengetahui akun yang login
+    pada saat ini 
+3.  Routing, mayoritas routing menggunakan context untuk menyimpan current route
+4.  Manage state, Penggunaan state pada top parent komponen akan semakin banyak bila kompleksitas
+    komponen semakin besar. Kombinasi penggunaan reducer dan context akan membantu
