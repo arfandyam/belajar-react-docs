@@ -3,20 +3,6 @@ export const initialState = {
   message: 'Hello',
 };
 
-/**
-   * Challenge 3
-   * Melakukan perubahan agar chat tetap tersimpan meski berganti dialog chat
-   */
-
-export const initialState3 = {
-  selectedId: 0,
-  messages: {
-    0: 'Hello',
-    1: 'Hello',
-    2: 'Hello',
-  },
-};
-
 export function messageReducer(state, action) {
   switch (action.type) {
     case 'changed': {
@@ -24,13 +10,6 @@ export function messageReducer(state, action) {
         ...state,
         selectedId: action.id,
         message: ''
-      }
-    }
-
-    case 'changed3': {
-      return {
-        ...state,
-        selectedId: action.id,
       }
     }
 
@@ -42,24 +21,9 @@ export function messageReducer(state, action) {
     }
 
     /**
-   * Challenge 3
-   * Melakukan perubahan agar chat tetap tersimpan meski berganti dialog chat
-   */
-    
-    case 'edited_message3': {
-      return {
-        ...state,
-        messages: {
-          ...state.messages,
-          [state.selectedId]: action.message
-        }
-      }
-    }
-
-    /**
-     * Challenge 2:
-     * Clear the input on sending the message
-     */
+    * Challenge 2:
+    * Clear the input on sending the message
+    */
     case 'sent_message': {
       return {
         ...state,
@@ -68,3 +32,6 @@ export function messageReducer(state, action) {
     }
   }
 }
+
+
+

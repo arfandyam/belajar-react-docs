@@ -15,7 +15,18 @@ export default function ChatReducer({contact, message, dispatch}){
         }}
       />
       <br />
-      <button>
+      
+
+    {/* 
+      Challenge 2:
+      Clear the input on sending the message
+    */}
+      <button onClick={() => {
+        dispatch({
+          type: 'sent_message',
+        });
+        alert(`Message: ${message} sent to ${contact.email}`);
+      }}>
         Send to {contact.email}
       </button>
     </section>
