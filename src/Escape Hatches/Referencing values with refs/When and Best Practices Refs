@@ -1,0 +1,11 @@
+useRef dapat digunaka ketika:
+
+1. Menyimpan timeout ID
+2. Menyimpan dan manipulasi element DOM,
+3. Menyimpan objek lain yang tidak perlu melakukan perhitungan JSX
+
+Terdapat prinsip dalam menggunakan ref pada komponen:
+
+1. Perlakukan useRef sebagai pintu keluar. Ref berguna ketika bekerja dengan sistem eksternal atau
+browser API.
+2. Jangan read or write Ref.current selama rendering. 
